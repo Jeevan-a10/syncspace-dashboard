@@ -1,0 +1,38 @@
+name: SyncSpace Dashboard CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    name: Test Suite & Next.js Production Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Execute Automated Test Suite
+        run: npm test
+
+      - name: Verify Next.js Standalone Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: http://localhost:5001
+          NEXT_PUBLIC_SOCKET_URL: http://localhost:5001
