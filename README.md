@@ -51,13 +51,18 @@ SyncSpace Dashboard connects teams with instant document synchronization, live m
 ## ✨ Key Features
 
 - **⚡ Real-Time Collaborative Document Editor**: Debounced keystroke synchronization across all peers in the room with monotonic revision badges and instant markdown rendering.
+- **🛠️ Rich Markdown Formatting Toolbar**: Instant shortcuts for bold, italic, H1-H3 headings, inline code, code blocks, blockquotes, bullet lists, numbered lists, task lists, tables, and links.
+- **📋 Predefined Document Templates**: 1-click insertion of Architecture RFCs, Daily Standup Syncs, API Specifications, and Incident Postmortems.
+- **📦 Document Export & Copy Hub**: Download documents as `.md` Markdown files directly to disk or copy entire formatted text to clipboard with toast confirmation.
 - **🖱️ Live Multi-User SVG Cursor Canvas**: High-fidelity cursor overlay streaming peer positions with auto-assigned signature palette colors and floating username tags.
 - **⌨️ Live Typing State Streaming**: Visual typing indicators ("Marcus is editing...") keeping teammates aware in real time.
 - **💬 Real-Time Workspace Chat**: Full-duplex room chat stream with optimistic message dispatching and auto-scrolling message feeds.
 - **👥 Live Presence & Peer Awareness**: Avatar stack showcasing all online collaborators with active status rings and custom palette colors.
 - **📜 Document Revision History**: Dedicated audit log modal displaying previous revisions, timestamps, authors, and change delta counts.
+- **📊 Real-Time Document Analytics**: Live computation of word counts, character counts, line numbers, and estimated reading time.
 - **🏠 Workspace Lobby & Topic Filtering**: Browse rooms with live presence counts, instant search queries, and domain filter tabs (`Engineering`, `Architecture`, `Design`, `Standup`, `General`).
 - **🛡️ Standalone Resilience**: Pre-seeded demo rooms and safe fallbacks ensure seamless SSR and offline UI functionality even if the backend is disconnected.
+- **🧪 Automated Test Suite**: 13 unit tests verifying API clients, socket event contracts, color palettes, and markdown parsing utilities.
 - **🐳 Multi-Stage Docker Build**: Production-optimized standalone Alpine container.
 
 ---
@@ -86,9 +91,11 @@ syncspace-dashboard/
 │   └── WorkspaceContext.js      # Global state for user, socket connection & toasts
 ├── lib/
 │   ├── api.js                   # Axios REST client for rooms, documents, and chat
+│   ├── markdown.js              # Formatting engine, stats, template catalog & parser
 │   └── socket.js                # Socket.io client singleton and user palette helper
 ├── tests/
 │   ├── api.test.js              # Unit tests for API endpoints and client
+│   ├── markdown.test.js         # Unit tests for formatting, templates & parser
 │   └── socket.test.js           # Unit tests for socket contracts & color mapping
 ├── Dockerfile                   # Multi-stage standalone Next.js container build
 └── package.json
@@ -133,7 +140,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 npm test
 ```
 
-Executes test suite validating API modules, socket protocols, and deterministic color palettes.
+Executes test suite validating API modules, socket protocols, deterministic color palettes, formatting helpers, and markdown parsing (13 tests passing).
 
 ### 5. Production Build
 
