@@ -19,7 +19,7 @@ export default function PresenceBar({ participants = [] }) {
               title={`${name} (${participant.isTyping ? 'Typing...' : 'Active'})`}
             >
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ring-2 ring-white shadow-xs transition-transform hover:scale-110 hover:z-20 cursor-default"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ring-2 ring-white shadow-xs cursor-default"
                 style={{ backgroundColor: color }}
               >
                 {initial}

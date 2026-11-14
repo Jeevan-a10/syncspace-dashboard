@@ -100,7 +100,7 @@ export default function CreateRoomModal({ onClose, onCreated }) {
           )}
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-medium text-slate-700 mb-1.5">
               Workspace Name
             </label>
             <input
@@ -114,7 +114,7 @@ export default function CreateRoomModal({ onClose, onCreated }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-medium text-slate-700 mb-1.5">
               Room Identifier (Slug)
             </label>
             <div className="relative">
@@ -135,7 +135,7 @@ export default function CreateRoomModal({ onClose, onCreated }) {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-medium text-slate-700 mb-1.5">
                 Topic Domain
               </label>
               <select
@@ -152,7 +152,7 @@ export default function CreateRoomModal({ onClose, onCreated }) {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-medium text-slate-700 mb-1.5">
                 Max Participants
               </label>
               <input
@@ -167,7 +167,7 @@ export default function CreateRoomModal({ onClose, onCreated }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-medium text-slate-700 mb-1.5">
               Description (Optional)
             </label>
             <textarea

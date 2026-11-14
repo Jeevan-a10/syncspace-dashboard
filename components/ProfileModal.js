@@ -63,7 +63,7 @@ export default function ProfileModal({ onClose }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-medium text-slate-700 mb-1.5">
               Display Name
             </label>
             <input
@@ -77,7 +77,7 @@ export default function ProfileModal({ onClose }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-medium text-slate-700 mb-1.5">
               Role / Title
             </label>
             <input
@@ -90,7 +90,7 @@ export default function ProfileModal({ onClose }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-medium text-slate-700 mb-2">
               Signature Cursor & Avatar Color
             </label>
             <div className="grid grid-cols-6 gap-2">
@@ -100,10 +100,10 @@ export default function ProfileModal({ onClose }) {
                   type="button"
                   onClick={() => setSelectedColor(palette.bg)}
                   style={{ backgroundColor: palette.bg }}
-                  className={`h-9 rounded-lg flex items-center justify-center transition-transform ${
+                  className={`h-9 rounded-lg flex items-center justify-center transition-colors ${
                     selectedColor === palette.bg
-                      ? 'ring-2 ring-offset-2 ring-indigo-600 scale-105'
-                      : 'hover:scale-95'
+                      ? 'ring-2 ring-offset-2 ring-indigo-600'
+                      : 'opacity-90 hover:opacity-100'
                   }`}
                   title={palette.name}
                 >

@@ -802,12 +802,8 @@ export default function CollaborativeEditor({
         {/* Active typing indicator */}
         <div className="flex items-center gap-2">
           {activeTypers.length > 0 ? (
-            <div className="flex items-center gap-1.5 text-indigo-600 font-medium animate-pulse">
-              <span className="flex space-x-1">
-                <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full animate-bounce"></span>
-                <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full animate-bounce [animation-delay:0.4s]"></span>
-              </span>
+            <div className="flex items-center gap-1.5 text-indigo-600 font-medium">
+              <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full"></span>
               <span>
                 {activeTypers.join(', ')} {activeTypers.length === 1 ? 'is' : 'are'} editing...
               </span>
